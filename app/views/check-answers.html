@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl">Your To-do</h1>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['date-input'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/date">
+            Change
+            <span class="govuk-visually-hidden"> number of balls you can juggle</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Daily steps </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['daily-steps'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/juggling-trick">
+            Change
+            <span class="govuk-visually-hidden"> your most impressive juggling trick</span>
+          </a>
+        </dd>
+    </dl>
+    
+    <form action="/confirmation" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Accept and send
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
