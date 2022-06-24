@@ -1,6 +1,14 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
 // Add your routes here - above the module.exports line
+let dateObj;
 
-module.exports = router
+router.post("/date-answers", (req, res) => {
+//   dateObj = req.session.data['date-input'];
+  
+  console.log(req.session.data);
+  res.redirect('/steps')
+});
+
+module.exports = router;
