@@ -64,31 +64,30 @@ href: "#"
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+    <form class="form" action="/steps" method="post">
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-    {{ govukDateInput({
-    id: "date-input",
-    namePrefix: "date-input",
-    fieldset: {
-    legend: {
-    text: "Select date to record",
-    isPageHeading: true,
-    classes: "govuk-fieldset__legend--l"
-    }
-    },
-    hint: {
-    text: "For example, 27 3 2007"
-    }
-    }) }}
+      {{ govukDateInput({
+      id: "date-input",
+      namePrefix: "date-input",
+      fieldset: {
+      legend: {
+      text: "Select date to record",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "For example, 27 3 2007"
+      }
+      }) }}
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
 
-    <a href="http://localhost:3000/steps" role="button" draggable="false"
-      class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-      Next
-      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
-        viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-      </svg>
-    </a>
+    </form>
+
+
 
 
   </div>
