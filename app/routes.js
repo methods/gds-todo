@@ -11,18 +11,18 @@ const router = express.Router();
 //   res.redirect('/steps')
 // });
 
-router.post("/steps", (req, res) => {
-  // let {day, month, year} = req.body;
-  let date = req.body
-  console.log(typeof date, date);
-  let {date-input-day, date-input-month, date-input-year } = date
-  // return res.send()
-  /**
-   * let {date-input-day, date-input-month, date-input-year } = date
-   * 'date-input-day': '2',
-  'date-input-month': '3',
-  'date-input-year': '6'
-   */
-});
+// router.post("/steps", (req, res) => {
+//   // let {day, month, year} = req.body;
+//   // let date = req.body
+//   // console.log(typeof date, date);
+//   // let {date-input-day, date-input-month, date-input-year } = date
+//   // return res.send()
+//   /**
+//    * let {date-input-day, date-input-month, date-input-year } = date
+//    * 'date-input-day': '2',
+//   'date-input-month': '3',
+//   'date-input-year': '6'
+//    */
+// });
 
 module.exports = router;
