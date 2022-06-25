@@ -64,7 +64,7 @@ href: "#"
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    <form class="form" action="/date-answers" method="post">
+    <form class="form" action="/steps" method="post">
       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
       {{ govukDateInput({
@@ -79,11 +79,14 @@ href: "#"
       },
       hint: {
       text: "For example, 27 3 2007"
-      }
+      },
+      value: data['date-input']
       }) }}
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+      
+        <a href="http://localhost:3000/steps">
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </a> 
+    </form>
 
     </form>
 

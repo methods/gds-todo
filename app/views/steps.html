@@ -1,120 +1,42 @@
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-Start page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block header %}
+{% extends "layout.html" %} {% block pageTitle %} Start page template – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block header %}
 <!-- Blank header with no service name for the start page -->
-{{ govukCookieBanner({
-ariaLabel: "Cookies on Methods todo list",
-messages: [
-{
-headingText: "Cookies on Methods todo list",
-html: html,
-actions: [
-{
-text: "Accept analytics cookies",
-type: "button",
-name: "cookies",
-value: "accept"
-},
-{
-text: "Reject analytics cookies",
-type: "button",
-name: "cookies",
-value: "reject"
-},
-{
-text: "View cookies",
-href: "#"
-}
-]
-}
-]
-}) }}
-{{ govukHeader() }}
-{% endblock %}
-
-
-{% block content %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-{{ govukBreadcrumbs({
-items: [
-{
-text: "Home",
-href: "http://localhost:3000/"
-},
-{
-text: "Wellbeing",
-href: "http://localhost:3000/wellbeing"
-},
-{
-text: "Date",
-href: "http://localhost:3000/date"
-},
-{
-text: "Steps",
-href: "#"
-}
-]
-}) }}
+{{ govukCookieBanner({ ariaLabel: "Cookies on Methods todo list", messages: [ {
+headingText: "Cookies on Methods todo list", html: html, actions: [ { text:
+"Accept analytics cookies", type: "button", name: "cookies", value: "accept" },
+{ text: "Reject analytics cookies", type: "button", name: "cookies", value:
+"reject" }, { text: "View cookies", href: "#" } ] } ] }) }} {{ govukHeader() }}
+{% endblock %} {% block content %} {% from
+"govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} {{
+govukBreadcrumbs({ items: [ { text: "Home", href: "http://localhost:3000/" }, {
+text: "Wellbeing", href: "http://localhost:3000/wellbeing" }, { text: "Date",
+href: "http://localhost:3000/date" }, { text: "Steps", href: "#" } ] }) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-xl">
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-
     <form class="form" action="/check-answers" method="post">
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-      idPrefix: "daily-steps",
-      name: "daily-steps",
-      fieldset: {
-      legend: {
-      text: "Select daily steps",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-      }
-      },
-      items: [
-      {
-      value: "500 or less",
-      text: "500 or less"
-      },
-      {
-      value: "1000 or less",
-      text: "1000 or less"
-      },
-      {
-      value: "2000 or less",
-      text: "2000 or less"
-      },
-      {
-      value: "5000 or less",
-      text: "5000 or less"
-      }
-      ]
-      }) }}
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% from "govuk/components/radios/macro.njk" import govukRadios %} {{
+      govukRadios({ idPrefix: "daily-steps", name: "daily-steps", fieldset: {
+      legend: { text: "Select daily steps", isPageHeading: true, classes:
+      "govuk-fieldset__legend--l" } }, items: [ { value: "500 or less", text:
+      "500 or less" }, { value: "1000 or less", text: "1000 or less" }, { value:
+      "2000 or less", text: "2000 or less" }, { value: "5000 or less", text:
+      "5000 or less" } ] }) }}
+      <a href="http://localhost:3000/check-answers">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </a>
     </form>
 
-    {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-    {{ govukDetails({
-    summaryText: "Information about recommended daily steps",
-    text: "This wellbeing to do list will ask you basic questions about daily activities that will boost your health and
-    wellbeing such as daily steps and water intake"
-    }) }}
-
-
-
+    {% from "govuk/components/details/macro.njk" import govukDetails %} {{
+    govukDetails({ summaryText: "Information about recommended daily steps",
+    text: "This wellbeing to do list will ask you basic questions about daily
+    activities that will boost your health and wellbeing such as daily steps and
+    water intake" }) }}
   </div>
-
-
 </div>
 {% endblock %}
