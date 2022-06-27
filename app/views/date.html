@@ -64,26 +64,16 @@ href: "#"
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    <form class="form" action="/date-answers" method="post">
-      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
-      {{ govukDateInput({
-      id: "date-input",
-      namePrefix: "date-input",
-      fieldset: {
-      legend: {
-      text: "Select date to record",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-      }
-      },
-      hint: {
-      text: "For example, 27 3 2007"
-      }
-      }) }}
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+    <form class="form" action="steps" method="post">
+			{{ govukDateInput ({ id: 'date', namePrefix: 'date', fieldset: {
+			legend: { text: 'What is your date of birth?', isPageHeading: true,
+			classes: 'govuk-fieldset__legend--l' } }, items: [ { classes:
+			'govuk-input--width-2', name: 'day', value: data['date-day'] }, {
+			classes: 'govuk-input--width-2', name: 'month', value:
+			data['date-month'] }, { classes: 'govuk-input--width-4', name:
+			'year', value: data['date-year'] } ] }) }} {{ govukButton ({ html:
+			'Save and continue' }) }}
+		</form>
 
     </form>
 

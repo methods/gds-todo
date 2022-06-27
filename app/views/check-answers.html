@@ -10,7 +10,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-xl">Your To-do</h1>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
+      <!-- <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Number of balls you can juggle
         </dt>
@@ -23,18 +23,18 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
             <span class="govuk-visually-hidden"> number of balls you can juggle</span>
           </a>
         </dd>
-      </div>
+      </div> -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['date-input'] }}
+          {{ data['date-day']+'/'+data['date-month']+'/'+data['date-year'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/date">
+          <a href="date">
             Change
-            <span class="govuk-visually-hidden"> number of balls you can juggle</span>
+            <!-- <span class="govuk-visually-hidden"> number of balls you can juggle</span> -->
           </a>
         </dd>
       </div>
@@ -45,9 +45,9 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
           {{ data['daily-steps'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/juggling-trick">
+          <a href="steps">
             Change
-            <span class="govuk-visually-hidden"> your most impressive juggling trick</span>
+            <!-- <span class="govuk-visually-hidden"> your most impressive juggling trick</span> -->
           </a>
         </dd>
     </dl>
