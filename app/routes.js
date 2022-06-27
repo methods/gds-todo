@@ -18,6 +18,7 @@ router.post("/date-answer", function (req, res) {
 
   if (givenDate > currentDate) {
       console.log("Given date is in the future");
+    //   res.redirect(404, '/date-err')
       res.redirect('/date-err')
     
   } else {
