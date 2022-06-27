@@ -17,12 +17,13 @@ router.post("/date-answer", function (req, res) {
   const currentDate = new Date();
 
   if (givenDate > currentDate) {
-    console.log("Given date is in the future");
+      console.log("Given date is in the future");
+      res.redirect('/date-err')
     
   } else {
     console.log("Given date is in the past");
     res.redirect('/steps')
-  }
+}
 
 });
 
