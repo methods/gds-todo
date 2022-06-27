@@ -21,7 +21,6 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions">
           <a href="date">
             Change
-            <!-- <span class="govuk-visually-hidden"> number of balls you can juggle</span> -->
           </a>
         </dd>
       </div>
@@ -34,9 +33,22 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions">
           <a href="steps">
             Change
-            <!-- <span class="govuk-visually-hidden"> your most impressive juggling trick</span> -->
           </a>
         </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Daily water intake </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['water-intake'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="water-intake">
+            Change
+          </a>
+        </dd>
+      </div>
     </dl>
 
     <form action="/confirmation" method="post" novalidate>

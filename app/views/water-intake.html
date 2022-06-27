@@ -10,30 +10,44 @@ headingText: "Cookies on Methods todo list", html: html, actions: [ { text:
 "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} {{
 govukBreadcrumbs({ items: [ { text: "Home", href: "http://localhost:3000/" }, {
 text: "Wellbeing", href: "http://localhost:3000/wellbeing" }, { text: "Date",
-href: "http://localhost:3000/date" }, { text: "Steps", href: "#" } ] }) }}
+href: "http://localhost:3000/date" }, { text: "Steps", href: "http://localhost:3000/steps" }, { text: "Water intake",
+href: "#"
+} ] }) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    <form class="form" action="/water-intake" method="post">
-      {% from "govuk/components/radios/macro.njk" import govukRadios %} {{
-      govukRadios({ idPrefix: "daily-steps", name: "daily-steps", fieldset: {
-      legend: { text: "Select daily steps", isPageHeading: true, classes:
-      "govuk-fieldset__legend--l" } }, items: [ { value: "500 or less", text:
-      "500 or less" }, { value: "1000 or less", text: "1000 or less" }, { value:
-      "2000 or less", text: "2000 or less" }, { value: "5000 or less", text:
-      "5000 or less" } ] }) }}
-      <!-- <a href="http://localhost:3000/check-answers"> -->
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
-      <!-- </a> -->
+    <form class="form" action="/check-answers" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {{
+      govukRadios({ idPrefix: "water-intake",
+      name: "water-intake", fieldset: {
+      legend: {
+      text: "Select water intake",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      } },
+      items: [ { value: "1 glass",
+      text:"1 glass"
+      }, {
+      value: "2 glasses",
+      text: "2 glasses" }, {
+      value:
+      "4 glasses",
+      text: "4 glasses" }, {
+      value: "8 glasses",
+      text:"8 glasses"} ] }) }}
+      <a href="http://localhost:3000/check-answers">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </a>
     </form>
 
     {% from "govuk/components/details/macro.njk" import govukDetails %} {{
-    govukDetails({ summaryText: "Information about recommended daily steps",
+    govukDetails({ summaryText: "Information about recommended daily water intake",
     text: "This wellbeing to do list will ask you basic questions about daily
     activities that will boost your health and wellbeing such as daily steps and
     water intake" }) }}
