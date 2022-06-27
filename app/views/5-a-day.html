@@ -11,39 +11,62 @@ headingText: "Cookies on Methods todo list", html: html, actions: [ { text:
 govukBreadcrumbs({ items: [ { text: "Home", href: "http://localhost:3000/" }, {
 text: "Wellbeing", href: "http://localhost:3000/wellbeing" }, { text: "Date",
 href: "http://localhost:3000/date" }, { text: "Steps", href: "http://localhost:3000/steps" }, { text: "Water intake",
-href: "#"
-} ] }) }}
+href: "http://localhost:3000/water-intake"}, { text: "5-a-day", href: "#" }
+ ] }) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    <form class="form" action="/5-a-day" method="post">
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-      {{
-      govukRadios({ idPrefix: "water-intake",
-      name: "water-intake", fieldset: {
-      legend: {
-      text: "Select water intake",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-      } },
-      items: [ { value: "1 glass",
-      text:"1 glass"
-      }, {
-      value: "2 glasses",
-      text: "2 glasses" }, {
-      value:
-      "4 glasses",
-      text: "4 glasses" }, {
-      value: "8 glasses",
-      text:"8 glasses"} ] }) }}
-      <a href="http://localhost:3000/check-answers">
+    <form class="form" action="/check-answers" method="post">
+      {{ govukCheckboxes({
+        idPrefix: "5aDay",
+        name: "5aDay",
+        fieldset: {
+          legend: {
+            text: "Select your 5-a-day",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        
+        items: [
+          {
+                        text: "apple",
+            value: "apple"
+          },
+          {
+            
+            text: "orange",
+            value: "orange"
+          },
+          {
+           
+            text: "broccoli",
+            value: "broccoli"
+          },
+          {
+            
+            text: "kiwi",
+            value: "kiwi"
+          },
+          {
+            
+            text: "pear",
+            value: "pear"
+          },
+          {
+            
+            text: "spinach",
+            value: "spinach"
+          }
+        ]
+      }) }}
+      
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
-      </a>
     </form>
 
     {% from "govuk/components/details/macro.njk" import govukDetails %} {{

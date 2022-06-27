@@ -49,6 +49,21 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </dd>
       </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          5-a-day
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['5aDay'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="date">
+            Change
+          </a>
+        </dd>
+      </div>
+
     </dl>
 
     <form action="/confirmation" method="post" novalidate>
