@@ -1,28 +1,15 @@
 const express = require("express");
+const isDateValid = require("./assets/javascripts/application");
 const router = express.Router();
 // const app = express();
 
 // Date validation
 router.post("/date-answer", function (req, res) {
 	const object = req.body;
-	const day = object["date-day"];
-	const month = object["date-month"];
-	const year = object["date-year"];
-	let givenDate = `${day}-${month}-${year}`;
-	console.log(givenDate);
-	givenDate = new Date(givenDate);
-	const currentDate = new Date();
-
-	if (givenDate > currentDate) {
-		console.log("Given date is in the future");
-		res.redirect("/date-err");
-	} else {
-		console.log("Given date is in the past");
-		res.redirect("/steps");
-	}
+  const url = isDateValid(object)
+  res.redirect(url)
+	
 });
-
-
 
 router.get("/", function (req, res) {
 	res.render("index");
