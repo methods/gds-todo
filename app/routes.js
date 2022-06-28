@@ -11,39 +11,39 @@ router.post("/date-answer", function (req, res) {
 	
 });
 
-router.get("/", function (req, res) {
+router.get("/todo", function (req, res) {
 	res.render("index");
 });
 
 // 404 error page handling
-router.get("/wellbeing", function (req, res) {
+router.get("/todo/wellbeing-todo", function (req, res) {
 	res.render("wellbeing");
 });
 
-router.get("/date", function (req, res) {
+router.get("/todo/wellbeing-todo/date", function (req, res) {
 	res.render("date");
 });
-router.get("/date-err", function (req, res) {
+router.get("/todo/wellbeing-todo/date-err", function (req, res) {
 	res.render("date-err");
 });
 
-router.get("/steps", function (req, res) {
+router.get("/todo/wellbeing-todo/steps", function (req, res) {
 	res.render("steps");
 });
 
-router.get("/water-intake", function (req, res) {
+router.get("/todo/wellbeing-todo/water-intake", function (req, res) {
 	res.render("water-intake");
 });
 
-router.get("/5-a-day", function (req, res) {
+router.get("/todo/wellbeing-todo/5-a-day", function (req, res) {
 	res.render("5-a-day");
 });
 
-router.get("/check-answers", function (req, res) {
+router.get("/todo/wellbeing-todo/check-answers", function (req, res) {
 	res.render("check-answers");
 });
-router.get("/confirmation-page", function (req, res) {
-	res.render("confirmation-page");
+router.get("/todo/wellbeing-todo/confirmation", function (req, res) {
+	res.render("confirmation");
 });
 
 //The 404 Route (ALWAYS Keep this as the last route)
