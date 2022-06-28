@@ -35,6 +35,7 @@
 {% include "includes/head.html" %}
 {% endblock %}
 
+
 {% block pageTitle %}
 GOV.UK Prototype Kit
 {% endblock %}
@@ -42,6 +43,35 @@ GOV.UK Prototype Kit
 
 
 {% block header %}
+
+{{ govukCookieBanner({
+    ariaLabel: "Cookies on Methods todo list",
+    messages: [
+    {
+    headingText: "Cookies on Methods todo list",
+    html: html,
+    actions: [
+    {
+    text: "Accept analytics cookies",
+    type: "button",
+    name: "cookies",
+    value: "accept"
+    },
+    {
+    text: "Reject analytics cookies",
+    type: "button",
+    name: "cookies",
+    value: "reject"
+    },
+    {
+    text: "View cookies",
+    href: "#"
+    }
+    ]
+    }
+    ]
+    }) }}
+
 {# Set serviceName in config.js. #}
 {{ govukHeader({
 homepageUrl: "/",
@@ -49,6 +79,13 @@ serviceName: serviceName,
 serviceUrl: "/",
 containerClasses: "govuk-width-container"
 }) }}
+
+
+<!-- Blank header with no service name for the start page -->
+
+
+
+
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}

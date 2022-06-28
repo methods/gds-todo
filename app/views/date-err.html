@@ -4,40 +4,6 @@
 Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ govukCookieBanner({
-ariaLabel: "Cookies on Methods todo list",
-messages: [
-{
-headingText: "Cookies on Methods todo list",
-html: html,
-actions: [
-{
-text: "Accept analytics cookies",
-type: "button",
-name: "cookies",
-value: "accept"
-},
-{
-text: "Reject analytics cookies",
-type: "button",
-name: "cookies",
-value: "reject"
-},
-{
-text: "View cookies",
-href: "#"
-}
-]
-}
-]
-}) }}
-{{ govukHeader() }}
-{% endblock %}
-
-
-
 {% block content %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
