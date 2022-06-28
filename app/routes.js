@@ -22,7 +22,10 @@ router.post("/date-answer", function (req, res) {
 
 router.get("/todo", homeView);
 
-router.get("/todo/wellbeing-todo", wellbeingView);
+// router.get("/todo/wellbeing-todo", wellbeingView);
+router.get("/todo/wellbeing-todo", function (req, res) {
+	res.render("wellbeing");
+});
 
 router.get("/todo/wellbeing-todo/date", dateView);
 
