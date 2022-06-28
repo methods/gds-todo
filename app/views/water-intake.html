@@ -1,5 +1,5 @@
 {% extends "layout.html" %} {% block pageTitle %} Start page template – {{
-serviceName }} – GOV.UK Prototype Kit {% endblock %}  {% block content %} {% from
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block content %} {% from
 "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} {{
 govukBreadcrumbs({ items: [ { text: "Home", href: "http://localhost:3000/" }, {
 text: "Wellbeing", href: "http://localhost:3000/wellbeing" }, { text: "Date",
@@ -12,7 +12,7 @@ href: "#"
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    <form class="form" action="/5-a-day" method="post">
+    <form class="form" action="http://localhost:3000/todo/wellbeing-todo/5-a-day" method="post">
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {{
       govukRadios({ idPrefix: "water-intake",

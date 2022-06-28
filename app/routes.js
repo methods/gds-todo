@@ -1,14 +1,13 @@
 const express = require("express");
-const isDateValid = require("./assets/javascripts/application");
+const isDateValid = require("./controllers/index");
 const router = express.Router();
 // const app = express();
 
 // Date validation
 router.post("/date-answer", function (req, res) {
 	const object = req.body;
-  const url = isDateValid(object)
-  res.redirect(url)
-	
+	const url = isDateValid(object);
+	res.redirect(url);
 });
 
 router.get("/todo", function (req, res) {

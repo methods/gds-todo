@@ -1,66 +1,66 @@
 {% extends "layout.html" %} {% block pageTitle %} Start page template – {{
-serviceName }} – GOV.UK Prototype Kit {% endblock %} 
- {% block content %} {% from
+serviceName }} – GOV.UK Prototype Kit {% endblock %}
+{% block content %} {% from
 "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} {{
 govukBreadcrumbs({ items: [ { text: "Home", href: "http://localhost:3000/" }, {
 text: "Wellbeing", href: "http://localhost:3000/wellbeing" }, { text: "Date",
 href: "http://localhost:3000/date" }, { text: "Steps", href: "http://localhost:3000/steps" }, { text: "Water intake",
 href: "http://localhost:3000/water-intake"}, { text: "5-a-day", href: "#" }
- ] }) }}
+] }) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    <form class="form" action="/check-answers" method="post">
+    <form class="form" action="http://localhost:3000/todo/wellbeing-todo/check-answers" method="post">
       {{ govukCheckboxes({
-        idPrefix: "5aDay",
-        name: "5aDay",
-        fieldset: {
-          legend: {
-            text: "Select your 5-a-day",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        
-        items: [
-          {
-                        text: "apple",
-            value: "apple"
-          },
-          {
-            
-            text: "orange",
-            value: "orange"
-          },
-          {
-           
-            text: "broccoli",
-            value: "broccoli"
-          },
-          {
-            
-            text: "kiwi",
-            value: "kiwi"
-          },
-          {
-            
-            text: "pear",
-            value: "pear"
-          },
-          {
-            
-            text: "spinach",
-            value: "spinach"
-          }
-        ]
+      idPrefix: "5aDay",
+      name: "5aDay",
+      fieldset: {
+      legend: {
+      text: "Select your 5-a-day",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+
+      items: [
+      {
+      text: "apple",
+      value: "apple"
+      },
+      {
+
+      text: "orange",
+      value: "orange"
+      },
+      {
+
+      text: "broccoli",
+      value: "broccoli"
+      },
+      {
+
+      text: "kiwi",
+      value: "kiwi"
+      },
+      {
+
+      text: "pear",
+      value: "pear"
+      },
+      {
+
+      text: "spinach",
+      value: "spinach"
+      }
+      ]
       }) }}
-      
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
     </form>
 
     {% from "govuk/components/details/macro.njk" import govukDetails %} {{
