@@ -3,7 +3,7 @@ const router = express.Router();
 
 const isDateValid = require("./controllers/index");
 const homeView = require("./controllers");
-const wellbeingView = require("./controllers");
+const wellbeingView = require("./controllers/index.js");
 const dateView = require("./controllers");
 const dateErrorView = require("./controllers");
 const stepsView = require("./controllers");
@@ -22,10 +22,10 @@ router.post("/date-answer", function (req, res) {
 
 router.get("/todo", homeView);
 
-// router.get("/todo/wellbeing-todo", wellbeingView);
-router.get("/todo/wellbeing-todo", function (req, res) {
-	res.render("wellbeing");
-});
+router.get("/todo/wellbeing-todo", wellbeingView);
+// router.get("/todo/wellbeing-todo", function (req, res) {
+// 	res.render("wellbeing");
+// });
 
 router.get("/todo/wellbeing-todo/date", dateView);
 

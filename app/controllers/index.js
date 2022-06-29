@@ -22,9 +22,9 @@ const homeView = (req, res) => {
 	res.render("index");
 };
 
-// const wellbeingView = (req, res) => {
-// 	res.render("wellbeing");
-// };
+const wellbeingView = (req, res) => {
+	res.render("wellbeing");
+};
 
 const dateView = (req, res) => {
 	res.render("date");
@@ -61,7 +61,7 @@ const errorPageView = (req, res) => {
 
 module.exports = homeView;
 module.exports = isDateValid;
-// module.exports = wellbeingView;
+module.exports = wellbeingView;
 module.exports = dateView;
 module.exports = dateErrorView;
 module.exports = stepsView;
