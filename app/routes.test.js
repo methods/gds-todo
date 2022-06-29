@@ -25,8 +25,11 @@ const router = require('./routes')
 
 describe('Test GET /wellbeing-todo', () => {
 	test('it should respond with 200 success', async () => {
-		const response = await request(app).get('/todo/wellbeing-todo');
-		expect(response.statusCode).toBe(200)
+		const response = await request(app)
+		.get('/todo/wellbeing-todo')
+		.expect('Content-Type', /html/)
+		.expect(200)
+		// expect(response.statusCode).toBe(200)
 	})
 })
 
