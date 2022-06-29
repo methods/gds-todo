@@ -23,7 +23,8 @@ const homeView = (req, res) => {
 };
 
 const wellbeingView = (req, res) => {
-	res.render("wellbeing");
+	console.log('hello')
+	// res.render("wellbeing");
 };
 
 const dateView = (req, res) => {
@@ -59,14 +60,14 @@ const errorPageView = (req, res) => {
 	res.status(404).render("404");
 };
 
-module.exports = homeView;
+// module.exports = homeView;
 module.exports = isDateValid;
-module.exports = wellbeingView;
-module.exports = dateView;
-module.exports = dateErrorView;
-module.exports = stepsView;
-module.exports = waterIntakeView;
-module.exports = fiveAdayView;
-module.exports = checkAnswersView;
-module.exports = confirmationView;
-module.exports = errorPageView;
+// module.exports = wellbeingView;
+// module.exports = dateView;
+// module.exports = dateErrorView;
+// module.exports = stepsView;
+// module.exports = waterIntakeView;
+// module.exports = fiveAdayView;
+// module.exports = checkAnswersView;
+// module.exports = confirmationView;
+// module.exports = errorPageView;
