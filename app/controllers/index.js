@@ -3,7 +3,7 @@ const isDateValid = (object) => {
 	const month = object["date-month"];
 	const year = object["date-year"];
 	let givenDate = `${day}-${month}-${year}`;
-	console.log(givenDate);
+	console.log('Date user input (isDateValid):', givenDate);
 	givenDate = new Date(givenDate);
 	const currentDate = new Date();
 
@@ -15,8 +15,6 @@ const isDateValid = (object) => {
 		return "/steps";
 	}
 };
-
-// routing and 404 error page handling
 
 const homeView = (req, res) => {
 	res.render("index");
