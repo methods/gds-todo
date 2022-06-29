@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const app = express();
 
 const isDateValid = require("./controllers/index");
 const homeView = require("./controllers");
@@ -27,7 +28,10 @@ router.post("/date-answer", function (req, res) {
 	res.redirect(url);
 });
 
-router.get("/todo", homeView);
+// router.get("/todo", homeView);
+app.get("/", (req, res) => {
+	res.status(200);
+});
 
 // router.get("/todo/wellbeing-todo", wellbeingView);
 router.get("/todo/wellbeing-todo", function (req, res) {
@@ -75,3 +79,4 @@ router.get("/todo/wellbeing-todo/404", function (req, res) {
 });
 
 module.exports = router;
+module.exports = app;
