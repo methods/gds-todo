@@ -1,11 +1,31 @@
-{% extends "layout.html" %} {% block pageTitle %} Start page template – {{
-serviceName }} – GOV.UK Prototype Kit {% endblock %}
-{% block content %} {% from
-"govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} {{
-govukBreadcrumbs({ items: [ { text: "Home", href: "http://localhost:3000/" }, {
-text: "Wellbeing", href: "http://localhost:3000/wellbeing" }, { text: "Date",
-href: "http://localhost:3000/date" }, { text: "Steps", href: "http://localhost:3000/steps" }, { text: "Water intake",
-href: "http://localhost:3000/water-intake"}, { text: "5-a-day", href: "#" }
+{% extends "layout.html" %}
+{% block pageTitle %}
+Start page template
+– {{
+serviceName
+}} –
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from
+"govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{
+govukBreadcrumbs({
+items: [ { text: "Home",
+href: "http://localhost:3000/" },
+{
+text: "Wellbeing",
+href: "http://localhost:3000/wellbeing" },
+{ text: "Date",
+href: "http://localhost:3000/date" },
+{ text: "Steps",
+href: "http://localhost:3000/steps" },
+{ text: "Water intake",
+href: "http://localhost:3000/water-intake"},
+{ text: "5-a-day", href: "#" }
 ] }) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -63,11 +83,14 @@ href: "http://localhost:3000/water-intake"}, { text: "5-a-day", href: "#" }
       </button>
     </form>
 
-    {% from "govuk/components/details/macro.njk" import govukDetails %} {{
-    govukDetails({ summaryText: "Information about recommended daily water intake",
+    {% from "govuk/components/details/macro.njk" import govukDetails %}
+    {{
+    govukDetails({
+    summaryText: "Information about recommended daily water intake",
     text: "This wellbeing to do list will ask you basic questions about daily
     activities that will boost your health and wellbeing such as daily steps and
-    water intake" }) }}
+    water intake"
+    }) }}
   </div>
 </div>
 {% endblock %}
