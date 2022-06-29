@@ -9,7 +9,7 @@ const isDateValid = (object) => {
 
 	if (givenDate > currentDate) {
 		console.log("ERR: Given date is in the future");
-		return "/date-err";
+		return "/date-err"; 
 	} else {
 		console.log("INFO: Given date is in the past");
 		return "/steps";

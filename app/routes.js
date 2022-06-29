@@ -1,6 +1,6 @@
 const express = require("express");
+const app = require('../server')
 const router = express.Router();
-// const app = express();
 
 const isDateValid = require("./controllers/index");
 // router.use(wellbeingView)
