@@ -31,6 +31,9 @@ router.get("/todo/wellbeing-todo/date", function (req, res) {
 router.get("/todo/wellbeing-todo/date-err", function (req, res) {
   res.render("date-err");
 });
+router.get("/todo/wellbeing-todo/date-invalid", function (req, res) {
+  res.render("date-invalid");
+});
 
 // router.get("/todo/wellbeing-todo/steps", stepsView);
 router.get("/todo/wellbeing-todo/steps", function (req, res) {

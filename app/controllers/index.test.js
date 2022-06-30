@@ -17,3 +17,12 @@ const result = isDateValid({
  })
  expect(result).toBe("/date-err")
 })
+
+test('should output "/date-invalid"', () => {
+const result = isDateValid({ 
+    'date-day': '',
+    'date-month': '4',
+    'date-year': '2023'
+ })
+ expect(result).toBe("/date-invalid")
+})

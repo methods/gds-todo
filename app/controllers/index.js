@@ -4,7 +4,7 @@ const isDateValid = (object) => {
 	const year = object["date-year"];
 	if (!day || !month || !year) {
 		console.log("ERR: Invalid date");
-		return "/date-err";
+		return "/date-invalid";
 		} 
 	let givenDate = `${day}-${month}-${year}`;
 	console.log('Date user input (isDateValid):', givenDate);

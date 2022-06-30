@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Home",
+href: "http://localhost:3000/"
+},
+{
+text: "Wellbeing",
+href: "http://localhost:3000/todo/wellbeing-todo"
+},
+{
+text: "Date",
+href: "#"
+}
+]
+}) }}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-xl">
+			{% if serviceName %} {{ serviceName }} {% endif %}
+		</h1>
+
+		<form class="form" action="/todo/wellbeing-todo/steps" method="post">
+			{{ govukDateInput ({
+			id: 'date',
+			namePrefix: 'date',
+			fieldset: {
+			legend: {
+			text: 'Enter to do date',
+			isPageHeading: true,
+			classes: 'govuk-fieldset__legend--l'
+			} },
+			errorMessage: {
+				text: "You must complete all fields"
+			},
+			items: [ {
+			classes:'govuk-input--width-2',
+			name: 'day', value: data['date-day'] },
+			{
+			classes: 'govuk-input--width-2',
+			name: 'month',
+			value:data['date-month'] },
+			{
+			classes: 'govuk-input--width-4',
+			name:
+			'year',
+			value: data['date-year'] }
+			] }) }}
+			{{ govukButton ({
+			html:'Save and continue'
+			}) }}
+		</form>
+
+		</form>
+
+
+
+
+	</div>
+
+
+</div>
+{% endblock %}
