@@ -2,28 +2,31 @@ const isDateValid = (object) => {
 	const day = object["date-day"];
 	const month = object["date-month"];
 	const year = object["date-year"];
+	if (!day || !month || !year) {
+		console.log("ERR: Invalid date");
+		return "/date-err";
+		} 
 	let givenDate = `${day}-${month}-${year}`;
-	console.log(givenDate);
+	console.log('Date user input (isDateValid):', givenDate);
 	givenDate = new Date(givenDate);
 	const currentDate = new Date();
 
 	if (givenDate > currentDate) {
 		console.log("ERR: Given date is in the future");
-		return "/date-err";
+		return "/date-err"; 
 	} else {
 		console.log("INFO: Given date is in the past");
 		return "/steps";
 	}
 };
 
-// routing and 404 error page handling
-
 const homeView = (req, res) => {
 	res.render("index");
 };
 
 const wellbeingView = (req, res) => {
-	res.render("wellbeing");
+	console.log('hello')
+	// res.render("wellbeing");
 };
 
 const dateView = (req, res) => {
@@ -59,14 +62,14 @@ const errorPageView = (req, res) => {
 	res.status(404).render("404");
 };
 
-module.exports = homeView;
+// module.exports = homeView;
 module.exports = isDateValid;
-module.exports = wellbeingView;
-module.exports = dateView;
-module.exports = dateErrorView;
-module.exports = stepsView;
-module.exports = waterIntakeView;
-module.exports = fiveAdayView;
-module.exports = checkAnswersView;
-module.exports = confirmationView;
-module.exports = errorPageView;
+// module.exports = wellbeingView;
+// module.exports = dateView;
+// module.exports = dateErrorView;
+// module.exports = stepsView;
+// module.exports = waterIntakeView;
+// module.exports = fiveAdayView;
+// module.exports = checkAnswersView;
+// module.exports = confirmationView;
+// module.exports = errorPageView;

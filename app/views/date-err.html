@@ -15,7 +15,7 @@ href: "http://localhost:3000/"
 },
 {
 text: "Wellbeing",
-href: "http://localhost:3000/wellbeing"
+href: "http://localhost:3000/todo/wellbeing-todo"
 },
 {
 text: "Date",
@@ -30,7 +30,7 @@ href: "#"
 			{% if serviceName %} {{ serviceName }} {% endif %}
 		</h1>
 
-		<form class="form" action="date-answer" method="post">
+		<form class="form" action="/todo/wellbeing-todo/steps" method="post">
 			{{ govukDateInput ({
 			id: 'date',
 			namePrefix: 'date',
