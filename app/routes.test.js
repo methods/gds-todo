@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require('../server')
-const router = require('./routes')
+// const router = require('./routes')
 
 // describe("test the root path and receive Hello World reponse", () => {
 // 	test("it should respond with the GET method", () => {
@@ -33,12 +33,14 @@ describe('Test GET /wellbeing-todo', () => {
 	})
 })
 
-// describe('Test POST /steps', () => {
-// 	test('it should respond with 200 success', () => {
-		
-// 	})
-// 	test('it should catch invalid dates')
-// })
+describe('Test POST /steps', () => {
+	test('it should respond with 200/201 success', async () => {
+		const response = await request(app)
+		.post('/todo/wellbeing-todo/steps')
+		.expect(302) // 302 ? found 
+	})
+	// test('it should catch invalid dates')
+})
 
 
 // post("/todo/wellbeing-todo/steps"

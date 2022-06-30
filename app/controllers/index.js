@@ -2,6 +2,10 @@ const isDateValid = (object) => {
 	const day = object["date-day"];
 	const month = object["date-month"];
 	const year = object["date-year"];
+	if (!day || !month || !year) {
+		console.log("ERR: Invalid date");
+		return "/date-err";
+		} 
 	let givenDate = `${day}-${month}-${year}`;
 	console.log('Date user input (isDateValid):', givenDate);
 	givenDate = new Date(givenDate);
