@@ -6,6 +6,7 @@ const isDateValid = require("./controllers/index");
 // router.use(wellbeingView)
 
 router.post("/todo/wellbeing-todo/steps", function (req, res) {
+  console.log(req.body)
   const object = req.body;
   const endpoint = isDateValid(object);
   res.redirect(endpoint);
