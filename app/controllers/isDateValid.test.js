@@ -1,4 +1,4 @@
-const isDateValid = require('./index')
+const isDateValid = require('./isDateValid')
 
 test('should output "/steps"', () => {
 const result = isDateValid({ 

@@ -2,11 +2,11 @@ const express = require("express");
 // const app = require('../server')
 const router = express.Router();
 
-const isDateValid = require("./controllers/index");
+const isDateValid = require("./controllers/isDateValid");
 // router.use(wellbeingView)
 
 router.post("/todo/wellbeing-todo/steps", function (req, res) {
-  console.log(req.body)
+  // console.log(req.body)
   const object = req.body;
   const endpoint = isDateValid(object);
   res.redirect(endpoint);
