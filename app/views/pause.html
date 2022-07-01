@@ -30,20 +30,19 @@ href: "#"
 			{% if serviceName %} {{ serviceName }} {% endif %}
 		</h1>
 
-		<h3 class="govuk-heading-m">
-			{{ 'Paul' | shallNotPass }}
-		</h3>
-
 		<form class="form" action="/todo/wellbeing-todo/steps" method="post">
 			{{ govukDateInput ({
 			id: 'date',
 			namePrefix: 'date',
 			fieldset: {
 			legend: {
-						isPageHeading: true,
+			text: 'Enter to do date',
+			isPageHeading: true,
 			classes: 'govuk-fieldset__legend--l'
 			} },
-			
+			errorMessage: {
+				text: "You must complete all fields"
+			},
 			items: [ {
 			classes:'govuk-input--width-2',
 			name: 'day', value: data['date-day'] },

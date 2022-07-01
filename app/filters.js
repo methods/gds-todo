@@ -7,6 +7,10 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  filters.shallNotPass = function() {
+    return 'Invalid date'
+}
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
