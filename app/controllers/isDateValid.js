@@ -4,7 +4,7 @@ const isDateValid = (object) => {
 	const year = object["date-year"];
 	if (!day || !month || !year) {
 		console.log("ERR: Invalid date");
-		return "You must enter a valid date.";
+		return "You must complete all fields";
 		} 
 	let givenDate = `${day}-${month}-${year}`;
 	console.log('Date user input (isDateValid):', givenDate);
@@ -13,7 +13,7 @@ const isDateValid = (object) => {
 
 	if (givenDate > currentDate) {
 		console.log("ERR: Given date is in the future");
-		return "You must enter a valid date."; 
+		return "You must enter a valid date"; 
 	} else {
 		console.log("INFO: Given date is in the past");
 		return "/steps";
