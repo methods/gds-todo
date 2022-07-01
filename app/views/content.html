@@ -1,260 +1,107 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block pageTitle %} Content page template – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %} {% block content %}
 
-{% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
-
-{% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-{% set pastDayHtml %}
-<h2 class="govuk-heading-l">Date</h2>
-{{ govukTable({
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened"
-    },
-    {
-      text: "Cases closed"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "3"
-      },
-      {
-        text: "0"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "1"
-      },
-      {
-        text: "0"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "2"
-      },
-      {
-        text: "0"
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
-
-{% set pastWeekHtml %}
-<h2 class="govuk-heading-l">Steps</h2>
-{{ govukTable({
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened"
-    },
-    {
-      text: "Cases closed"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "24"
-      },
-      {
-        text: "18"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "16"
-      },
-      {
-        text: "20"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "24"
-      },
-      {
-        text: "27"
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
-
-{% set pastMonthHtml %}
-<h2 class="govuk-heading-l">Water Intake</h2>
-{{ govukTable({
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened"
-    },
-    {
-      text: "Cases closed"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "98"
-      },
-      {
-        text: "95"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "122"
-      },
-      {
-        text: "131"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "126"
-      },
-      {
-        text: "142"
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
-
-{% set pastYearHtml %}
-<h2 class="govuk-heading-l">5 a day</h2>
-{{ govukTable({
-  head: [
-    {
-      text: "Case manager"
-    },
-    {
-      text: "Cases opened"
-    },
-    {
-      text: "Cases closed"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "David Francis"
-      },
-      {
-        text: "1380"
-      },
-      {
-        text: "1472"
-      }
-    ],
-    [
-      {
-        text: "Paul Farmer"
-      },
-      {
-        text: "1129"
-      },
-      {
-        text: "1083"
-      }
-    ],
-    [
-      {
-        text: "Rita Patel"
-      },
-      {
-        text: "1539"
-      },
-      {
-        text: "1265"
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
-
-{{ govukTabs({
-  items: [
-    {
-      label: "Date",
-      id: "past-day",
-      panel: {
-        html: pastDayHtml
-      }
-    },
-    {
-      label: "Steps",
-      id: "past-week",
-      panel: {
-        html: pastWeekHtml
-      }
-    },
-    {
-      label: "Water Intake",
-      id: "past-month",
-      panel: {
-        html: pastMonthHtml
-      }
-    },
-    {
-      label: "5 a day",
-      id: "past-year",
-      panel: {
-        html: pastYearHtml
-      }
-    }
-  ]
-}) }}
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">Contents</h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day"> Date </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week"> Steps </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-month"> Water Intake </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-year"> 5 a day </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel" id="past-day">
+        <h2 class="govuk-heading-l">Date</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Day</th>
+              <th scope="col" class="govuk-table__header">Month</th>
+              <th scope="col" class="govuk-table__header">Year</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['date-day'] }}</td>
+              <td class="govuk-table__cell">{{ data['date-month'] }}</td>
+              <td class="govuk-table__cell">{{ data['date-year'] }}</td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+        <h2 class="govuk-heading-l">Steps</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Total Steps</th>
+              
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['daily-steps'] }}</td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+        <h2 class="govuk-heading-l">Water Intake</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">No of Glasses</th>
+              
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['water-intake'] }}</td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+        <h2 class="govuk-heading-l">5 a day</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">What fruit and veg?</th>
+              
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['5aDay'] }}</td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-
+  <form action="http://localhost:3000/todo/wellbeing-todo/confirmation" method="post" novalidate>
+    <input type="hidden" name="answers-checked" value="true">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Accept and send
+    </button>
+  </form>
+</div>
 {% endblock %}
