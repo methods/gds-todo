@@ -5,11 +5,14 @@ const router = express.Router();
 const isDateValid = require("./controllers/isDateValid");
 // router.use(wellbeingView)
 
-router.post("/todo/wellbeing-todo/steps", function (req, res) {
+router.post("/todo/wellbeing-todo/date-err", function (req, res) {
   // console.log(req.body)
   const object = req.body;
   const endpoint = isDateValid(object);
-  res.redirect(endpoint);
+  if(endpoint === '/steps') {
+    return res.redirect('steps')
+  } 
+  res.render('date-err');
 });
 
 // router.get("/todo", homeView);

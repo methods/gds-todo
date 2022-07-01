@@ -30,7 +30,11 @@ href: "#"
 			{% if serviceName %} {{ serviceName }} {% endif %}
 		</h1>
 
-		<form class="form" action="/todo/wellbeing-todo/steps" method="post">
+		<h2 class="govuk-heading-m">
+
+		</h2>
+
+		<form class="form" action="/todo/wellbeing-todo/date-err" method="post">
 			{{ govukDateInput ({
 			id: 'date',
 			namePrefix: 'date',
