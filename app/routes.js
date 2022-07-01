@@ -4,18 +4,6 @@ const router = express.Router();
 
 const { homeView, wellbeingView, dateView, dateErrView, stepsView, waterIntakeView, fiveAdayView, checkAnswersView, confirmationView, errorPageView } = require('../app/controllers/controller')
 
-// const isDateValid = require("./controllers/isDateValid");
-
-// router.post("/todo/wellbeing-todo/date-err", function (req, res) {
-
-//   const object = req.body;
-//   const endpoint = isDateValid(object);
-//   if(endpoint === '/steps') {
-//     return res.redirect('steps')
-//   } 
-//   res.render('date-err');
-// });
-
 router.get("/todo", homeView);
 router.get("/todo/wellbeing-todo", wellbeingView);
 router.get("/todo/wellbeing-todo/date", dateView);

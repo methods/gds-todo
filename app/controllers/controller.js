@@ -5,7 +5,6 @@ exports.homeView = (req, res) => {
 };
 
 exports.wellbeingView = (req, res) => {
-	// console.log('hello')
 	res.render("wellbeing");
 };
 
@@ -50,15 +49,3 @@ exports.confirmationView = (req, res) => {
 exports.errorPageView = (req, res) => {
 	res.status(404).render("404");
 };
-
-// module.exports = homeView;
-
-// module.exports = wellbeingView;
-// module.exports = dateView;
-// module.exports = dateErrorView;
-// module.exports = stepsView;
-// module.exports = waterIntakeView;
-// module.exports = fiveAdayView;
-// module.exports = checkAnswersView;
-// module.exports = confirmationView;
-// module.exports = errorPageView;
