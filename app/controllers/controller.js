@@ -17,10 +17,13 @@ exports.dateErrView = (req, res) => {
 	
 	const object = req.body;
 	const endpoint = isDateValid(object);
+	const data = {
+		message: endpoint
+	}
 	if(endpoint === '/steps') {
 	  return res.redirect('steps')
 	} 
-	res.render('date-err');
+	res.render('date-err.html', data);
 };
 
 exports.stepsView = (req, res) => {
